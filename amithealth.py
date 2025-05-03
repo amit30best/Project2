@@ -1,6 +1,10 @@
+import time
+
 print("QuickHealth Pro Max – Interactive Symptom Checker")
+time.sleep(3)
 
 print("\n👋 Hello there! Let's check how you're doing today.")
+time.sleep(3)
 
 # 👤 We need to ask user for personal details
 print("\n👤 Personal Details")
@@ -28,13 +32,14 @@ if len(city) == 0:
     print("Error: City cannot be empty!")
     city = input("📍 Your city: ").strip()
 
+time.sleep(3)
+
 # 🤒 2. We need to ask for health inputs 
 print("\n🤒 Symptoms & Health Info")
 print("Select all symptoms you're experiencing (comma separated):")
 print("Options: fever, cough, fatigue, headache, chest pain, breathlessness")
 all_symptoms = input("Your symptoms: ").strip().lower()
 
-# We need to also check if at least one valid symptom is included or not
 has_fever = "fever" in all_symptoms
 has_cough = "cough" in all_symptoms
 has_fatigue = "fatigue" in all_symptoms
@@ -57,7 +62,6 @@ if most_troubling != "fever" and most_troubling != "cough" and most_troubling !=
     print("Error: Must choose one valid symptom")
     most_troubling = input("Most troubling symptom: ").strip().lower()
 
-# we need to ask other health inputs
 temp = input("🌡️ Body Temperature (°F): ").strip()
 if temp.replace('.', '').isdigit():
     temp = float(temp)
@@ -100,7 +104,8 @@ if conditions != "yes" and conditions != "no":
     print("Error: Please answer exactly 'yes' or 'no'")
     conditions = input("Pre-existing conditions? (yes/no): ").strip().lower()
 
-# ⚙️ we need to define rrisk Scoring
+time.sleep(3)
+
 risk_score = 0
 
 if most_troubling == "fever":
@@ -139,8 +144,8 @@ if mood == "anxious" or mood == "sad" or mood == "irritable":
 if conditions == "yes":
     risk_score = risk_score + 2
 
-# 📊 we need to share health risk result
 print("\n⚖️ Your Health Risk:")
+time.sleep(3)
 
 if risk_score <= 3:
     print("🟢 Low Risk: Your symptoms appear mild")
@@ -149,7 +154,8 @@ elif risk_score <= 6:
 else:
     print("🔴 High Risk: Please seek medical attention")
 
-# 🩺 Personalized Advice
+time.sleep(3)
+
 print("\n💡 Personalized Health Advice:")
 
 if gender == "female" and age >= 45:
@@ -172,7 +178,8 @@ if conditions == "yes":
 
 print("- Nearest urgent care in " + city + ": Park Hospital")
 
-# 🧘 we also need to share mental health tip
+time.sleep(3)
+
 print("\n🧘 Mental Health Tip:")
 
 if mood == "calm":
